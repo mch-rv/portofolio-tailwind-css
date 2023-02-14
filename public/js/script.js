@@ -41,7 +41,8 @@ window.addEventListener('click', function (e) {
 const darkToggle = document.querySelector('#dark-toggle');
 const html = document.querySelector('html');
 const dark = document.querySelector('#dark');
-const light = document.querySelector('#light')
+const light = document.querySelector('#light');
+const toggle = document.querySelector('#toggle')
 
 darkToggle.addEventListener('click', function () {
     if (darkToggle.checked) {
@@ -49,13 +50,19 @@ darkToggle.addEventListener('click', function () {
         localStorage.theme = 'dark';
         dark.classList.add('text-white');
         dark.classList.remove('text-slate-500');
+        light.classList.remove('text-primary');
         light.classList.add('text-slate-500');
+        toggle.classList.remove('bg-primary');
+        toggle.classList.add('bg-slate-500');
     } else {
         html.classList.remove('dark');
         localStorage.theme = 'light';
-        light.classList.add('text-dark');
+        light.classList.add('text-primary');
         light.classList.remove('text-slate-500');
+        dark.classList.remove('text-white');
         dark.classList.add('text-slate-500');
+        toggle.classList.add('bg-primary');
+        toggle.classList.remove('bg-slate-500');
     };
 });
 
@@ -66,9 +73,13 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
     dark.classList.add('text-white');
     dark.classList.remove('text-slate-500');
     light.classList.add('text-slate-500');
+    toggle.classList.remove('bg-primary');
+    toggle.classList.add('bg-slate-500');
 } else {
     darkToggle.checked = false;
-    light.classList.add('text-dark');
+    light.classList.add('text-primary');
     light.classList.remove('text-slate-500');
     dark.classList.add('text-slate-500');
+    toggle.classList.add('bg-primary');
+    toggle.classList.remove('bg-slate-500');
 }
