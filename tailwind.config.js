@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}"],
+  content: ["./index.html","./public/js/script.js"],
   darkMode: 'class',
   theme: {
     container: {
@@ -16,7 +16,7 @@ module.exports = {
       fontFamily: {
         Inter: ['Inter'],
       },
-      screen: {
+      screens: {
         '2xl': '1320px',
       },
     },
