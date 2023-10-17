@@ -702,6 +702,18 @@ video {
   height: 2.25rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.max-h-\[200px\] {
+  max-height: 200px;
+}
+
+.max-h-\[150px\] {
+  max-height: 150px;
+}
+
 .w-14 {
   width: 3.5rem;
 }
